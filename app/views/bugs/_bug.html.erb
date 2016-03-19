@@ -8,10 +8,13 @@
      <div class="article_title"> <%= bug.title %> </div>
       <div class="article_info">
        <span class="date"> <%= bug.updated_at.to_formatted_s(:long_ordinal) %> </span>
-        <span class="author"> By <%=  (bug.author.try(:f_name) || "NA") %> </span>
+        <span class="author"> By <%=  (bug.author.try(:fname) || "NA") %> <%=  (bug.author.try(:lname) || "") %> </span>
       </div>
     
      <div class="article_text"> <%= bug.description %> </div>
+      <div class="article_issue"> <%= bug.issue_type %> </div>
+      <div class="article_priority"> <%= bug.priority %> </div>
+      <div class="article_status"> <%= bug.status %> </div>
         <div class="actions">
             <%= link_to 'Show', bug %>
             <%= link_to 'Edit', edit_bug_path(bug), remote: true %>
