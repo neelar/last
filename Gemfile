@@ -53,5 +53,5 @@ end
 
 group :production do
   gem 'pg'
-  gem 'rails_12factor'
+  gem 'rail_12factor'
 end
