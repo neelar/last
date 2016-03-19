@@ -1,0 +1,22 @@
+
+<% if bug == @current_bug %>
+<div id="current_bug" class="article">
+<% else %>
+<div class="article">
+<% end %>
+
+     <div class="article_title"> <%= bug.title %> </div>
+      <div class="article_info">
+       <span class="date"> <%= bug.updated_at.to_formatted_s(:long_ordinal) %> </span>
+        <span class="author"> By <%=  (bug.author.try(:f_name) || "NA") %> </span>
+      </div>
+    
+     <div class="article_text"> <%= bug.description %> </div>
+        <div class="actions">
+            <%= link_to 'Show', bug %>
+            <%= link_to 'Edit', edit_bug_path(bug), remote: true %>
+            <%= link_to 'Destroy', bug, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
+        </div>
+
+
+</div>

@@ -1,0 +1,50 @@
+<%= form_for(@bug, remote:true) do |f| %>
+  <% if @bug.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bug.errors.count, "error") %> prohibited this bug from being saved:</h2>
+
+      <ul>
+      <% @bug.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+ <%= f.label :author_id %><br>
+ <%= f.select :author_id,
+ options_for_select(Author.all.collect {|a| ["#{a.lname},
+ #{a.fname}", a.id]},
+ selected: (@bug.author ? @bug.author.id : Author.first.id)),
+ {} %>
+</div>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  
+  
+  <div class="field">
+    <%= f.label :issue_type %><br>
+    <%= f.select :issue_type, options_for_select(@issue_types.collect {|s| [s[0].humanize, s[0]]},selected: @bug.issue_type), {} %>
+  </div>
+  <div class="field">
+    <%= f.label :priority %><br>
+    <%= f.select :priority, options_for_select(@priorities.collect {|s| [s[0].humanize, s[0]]}, selected: @bug.priority), {} %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.select :status, options_for_select(@statuses.collect {|s| [s[0].humanize, s[0]]}, selected: @bug.status), {} %>
+  </div>
+  
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

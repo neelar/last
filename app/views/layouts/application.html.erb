@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Project</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= controller.controller_name %>" >
+  <div id="banner">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Nuvola_apps_bug.png" alt="Fjords" width="100" height="100">
+  <%= @page_title || "Bugs!" %>
+  </div>
+  
+  <div id="columns">
+  <div id="side">
+  <ul>
+  <li ><a href="/" style="text-decoration:none;font-size:20px;">Home</a></li>
+  <li ><a href="/authors"  style="text-decoration:none;font-size:20px;">Users</a></li>
+  <li ><a href="/bugs"  style="text-decoration:none;font-size:20px;">Bugs</a></li>
+  <li ><a href="/"  style="text-decoration:none;font-size:20px;">Contact</a></li>
+  </ul>
+  </div>
+
+  <div id="main">
+  <%= yield %>
+  </div>
+  
+  </div>
+</body>
+</html>

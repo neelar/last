@@ -1,0 +1,17 @@
+<body id="id_bug">
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<span class="btn" style="float:right;">
+<%= link_to 'New Bug', new_bug_path , remote:true %>
+</span>
+
+
+<div id="bugs">
+  <%= render @bugs %>
+</div>
+
+<div id="blog-form" style="display:none;"></div>
+
+</body>
