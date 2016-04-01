@@ -184,3 +184,68 @@ tr:nth-child(even){background-color: #f2f2f2}
 #id_contact{
  background:red;
 }
+
+
+
+
+
+#tharticle,#thauthor,#thdescription,#thissue_type,#thpriority,#thstatus,#thaction{
+      
+      display: table-cell;
+      font-weight: bold;
+      
+      padding-left: 25px;
+      padding-right: 25px;
+      padding-bottom: 15px;
+      border-bottom:2px;
+     align: center;
+    }
+   .article
+    {
+        display: table-row;
+    }
+    
+    .article_title{
+     display: table-cell;
+        padding-right:20px;
+        padding-bottom:15px;
+        border-bottom:2px;
+        padding-left:15px;
+        align:center;
+    }
+    
+    .article_text,.article_info
+    {
+        display: table-cell;
+        padding-right:20px;
+        padding-bottom:15px;
+        border-bottom:2px;
+        align:center;
+    }
+    
+    .article_issue,.article_status{
+        display: table-cell;
+        padding-left:25px;
+        padding-right:70px;
+        padding-bottom:15px;
+        border-bottom:2px;
+        align:center;
+     
+    }
+    
+    .article_priority{
+        display: table-cell;
+        padding-right:60px;
+        padding-bottom:15px;
+        border-bottom:2px;
+        align:center;
+     
+    }
+    .actions{
+     display:table-cell;
+     text-align:center;
+     
+    }
+    
+    
+    
